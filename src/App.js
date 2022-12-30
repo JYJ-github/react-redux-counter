@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addNum } from "./redux/modules/counter";
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const globarNumber = useSelector((state) => state.counter.number);
+
+  const addNumHandler = () => {
+    dispatch(addNum(1));
+  };
+
+  const minsuNumHandler = () => {
+    dispatch(addNum(-1));
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {globarNumber}
+      <input type="button" value="+" onClick={addNumHandler} />
+      <input type="button" value="-" onClick={minsuNumHandler} />
     </div>
   );
-}
+};
 
 export default App;
