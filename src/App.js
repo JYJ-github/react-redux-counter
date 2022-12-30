@@ -15,7 +15,8 @@ const App = () => {
   };
   return (
     <div>
-      {globarNumber}
+      <h2>counter</h2>
+      <div>{globarNumber}</div>
       <input type="button" value="+" onClick={addNumHandler} />
       <input type="button" value="-" onClick={minsuNumHandler} />
     </div>
