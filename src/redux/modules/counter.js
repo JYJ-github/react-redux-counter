@@ -3,7 +3,7 @@ const initialState = {
   number: 0,
 };
 
-// Action Value
+// Action value
 const ADD_NUM = "ADD_NUM";
 
 //Action Creator
